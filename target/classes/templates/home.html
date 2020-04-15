@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <body>
+  	
+  
+	  	  <div class="container">
+	  	  <h1>Corona-Virus Tracker Application</h1>
+  	<p class="lead">Total Reported cases In One Day.</p>
+	  <div class="jumbotron">
+	 <h1 class="display-4"  th:text="${totalcount}">0 </h1>
+	  <p>Total Cases</p>
+	  
+</div>
+</div>
+ <div class="container">
+    <table class="table">
+    
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total cases</th>
+        <th>Last Day Change</th>
+      </tr>
+      <tr th:each="locationStat : ${locationStats}">
+        <td class="username" th:text="${locationStat.state}"></td>
+       <td class="username" th:text="${locationStat.country}"></td>
+         <td class="username" th:text="${locationStat.LetestTotalcases}">0</td>
+          <td class="username" th:text="${locationStat.diff}">0</td>
+      </tr>
+    </table></div>
+  </body>
+</html>
